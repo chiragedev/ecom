@@ -35,18 +35,23 @@
       <div id="menu" class="menu-wrap hide">
         <!-- Logo -->
         <div>
-          <a class="site-name" href= "dashboard.html">
-            <div class="logo">
-              <img src="..\..\..\..\theme_asset\dash\img\logo.png" alt="" />
-            </div>
-          </a>
+            <a href="{{ route('home') }}" class="logo">
+            <h1 class="video-bar__title" style="font-size: 2 rem;
+        font-weight: bold;
+        color: #ff7f28;
+        margin-bottom: 1rem;
+        ali gn-items: center;
+        ">
+              Tech Heaven
+            </h1>
+        </a>
         </div>
 
         <!-- Navlist -->
         <ul class="insideScroll text-white mt-2">
 
           <li class="hover">
-            <a href="index.html" class="">
+            <a href="{{route('admin.dashboard')}}" class="">
               <i class="fas fa-house-damage"></i>
               Overview
             </a>
@@ -74,10 +79,13 @@
           </li>
 
           <li class="hover">
-            <a href="logout.html" class="">
-              <i class="fa-solid fa-arrow-right-from-bracket"></i>
-              Logout
-            </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST">
+              @csrf
+              <button type="button" class="btn text-black hover" onclick="document.getElementById('logout-form').submit();">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+              </button>
+            </form>
           </li>
         </ul>
       </div>

@@ -35,6 +35,24 @@ class CategoryComponent extends Component
 
     }
 
+    public function deleteCategory($categoryId)
+    {
+        $category = Category::find($categoryId);
+
+        if ($category) {
+            if ($category->products()->exists()) {
+                session()->flash('error', 'Cannot delete category.');
+                return;
+            }
+
+            $category->delete();
+            session()->flash('message', 'Category deleted successfully!');
+            $this->categories = Category::all(); // Refresh the category list
+        } else {
+            session()->flash('error', 'Category not found.');
+        }
+    }
+
     public function render()
 
     {

@@ -1,29 +1,53 @@
-<div >
-
-    <h2 >Manage Categories</h2>
-
-    <form wire:submit.prevent="saveCategory" >
-
-        <input type="text" wire:model="name" placeholder="Category Name"  />
-
-        <button type="submit">Add Category</button>
-
-    </form>
-
-    @if (session()->has('message'))
-
-        <div>{{ session('message') }}</div>
-
+<div>
+    @if (session()->has('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
     @endif
 
-    <ul>
+    @if (session()->has('message'))
+        <div class="alert alert-success">
+            {{ session('message') }}
+        </div>
+    @endif
 
-        @foreach ($categories as $category)
+    <div class="com_card mx-2">
+        <h3 class="com_card_title mb-3">Add New Category</h3>
 
-            <li>{{ $category->name }}</li>
+        <form wire:submit.prevent="saveCategory">
+          <label for="" class="form_label">Category Name</label>
+          <input type="text" class="form-input" wire:model="name"  />
 
-        @endforeach
+          <button type="submit" class="btn-one mt-3">Add Category</button>
+        </form>
+    </div>
 
-    </ul>
+    <div class="com_card mx-2">
+        <h3 class="com_card_title mb-3">All Categories</h3>
 
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Category Name</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody>
+                @foreach ($categories as $category)
+                <tr>
+                    <td>{{ $category->id }}</td>
+                    <td>{{ $category->name }}</td>
+                    <td>
+                        <button wire:click="deleteCategory({{ $category->id }})" class="btn btn-danger">Delete</button>
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+          </table>
+        </div>
+    </div>
 </div>
+

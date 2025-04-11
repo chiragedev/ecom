@@ -1,10 +1,15 @@
-<div>
+ <!-- Dashboard main content section -->
+ <div class="main-content">
+    <div class="container-fluid">
 
-    <h1>Order Management</h1>
+      <!-- order history table -->
 
-    <table>
+      <div class="com_card mx-2">
+        <h3 class="com_card_title mb-3">All Orders</h3>
 
-    <thead>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
 
         <tr>
 
@@ -23,6 +28,8 @@
             <th>Status</th>
 
             <th>Actions</th>
+
+           
 
         </tr>
 
@@ -50,9 +57,9 @@
 
                 <td>
 
-                    <button wire:click="approveOrder({{ $order->id }})">Approve</button>
+                    <button  class="btn btn-primary" wire:click="approveOrder({{ $order->id }})">Approve</button>
 
-                    <button wire:click="cancelOrder({{ $order->id }})">Cancel</button>
+                    <button class="btn btn-danger" wire:click="cancelOrder({{ $order->id }})">Cancel</button>
 
                 </td>
 

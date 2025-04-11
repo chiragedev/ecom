@@ -11,11 +11,12 @@ class AddProductComponent extends Component
 {
     use WithFileUploads;
 
-    public $title, $description, $price, $image, $categories, $category_id;
+    public $title, $description, $price, $image, $categories, $category_id, $products;
 
     public function mount()
     {
         $this->categories = Category::all();
+        $this->products = Product::with('category')->get();
     }
 
     public function saveProduct()
@@ -31,6 +32,16 @@ class AddProductComponent extends Component
         ]);
 
         session()->flash('message', 'Product added successfully!');
+    }
+
+    public function deleteProduct($productId)
+    {
+        $product = Product::find($productId);
+        if ($product) {
+            $product->delete();
+            session()->flash('message', 'Product deleted successfully!');
+            $this->products = Product::with('category')->get(); // Refresh the product list
+        }
     }
 
     public function render()

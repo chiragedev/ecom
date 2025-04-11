@@ -9,7 +9,7 @@ class SingleProductComponent extends Component
 {
     public $product;
 
-    /**
+    /**  
 
      * Mount the component with the selected product.
 
