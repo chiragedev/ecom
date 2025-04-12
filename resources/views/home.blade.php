@@ -52,6 +52,22 @@
       @livewire('browse-products-component')
     </div>
 
+    <!-- Find Us -->
+    <div class="container mt-5">
+      <h2 class="text-center mb-4" style="font-size: 2rem; font-weight: bold;">Find Us</h2>
+      <div class="map-container" style="width: 100%; height: 400px; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d271.0805790522488!2d-9.535488!3d30.3988736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdb3c833a697c883%3A0xd499cff904412ef6!2sENSA%20Agadir%20-%20Ecole%20Nationale%20des%20Sciences%20Appliqu%C3%A9es!5e0!3m2!1sen!2sma!4v1697040000000!5m2!1sen!2sma" 
+          width="100%" 
+          height="100%" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+
     <!-- Footer -->
     <footer id="footer" class="py-5 bg-dark text-light">
       <div class="container">

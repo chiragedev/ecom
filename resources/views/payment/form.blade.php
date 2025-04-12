@@ -9,7 +9,7 @@
 
             <div class="form-group mb-3">
                 <label>Amount ($)</label>
-                <input type="number" name="amount" class="form-control" required min="1" step="0.01">
+                <input type="number" name="amount" class="form-control" required min="1" step="0.01" value="{{ $total }}">
             </div>
 
             <div class="form-group mb-3">

@@ -168,12 +168,13 @@ ul {
 .dropdown-menu {
   background: var(--bg-light);
   box-shadow: var(--shadow);
-  font-size: 16px;
+  font-size: 50px;
   padding: 10px;
 }
 
 .dropdown-item {
-  padding: 10px;
+  padding: 50px;
+  font-size: 19px;
 }
 
 .dropdown:hover .dropdown-menu {
@@ -532,12 +533,15 @@ button {
   padding: 10px 20px;
   border-radius: 25px;
   font-weight: bold;
-  transition: all 0.3s ease;
+  transition: all 1.5s  ; /* Add this */
 }
 
 button:hover {
   background: linear-gradient(90deg, #ff8c00, #ffd700);
   transform: scale(1.05);
+  transition: 700ms;
+  
+
 }
 
 /* Video bar styles */
